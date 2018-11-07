@@ -4,6 +4,7 @@
       v-for="singleVideo in videosList"
       :video="singleVideo"
       :key="singleVideo.etag"
+      @videoSelect="onVideoSelected"
     >
     </VideoListItem>
   </ul>
@@ -19,6 +20,11 @@ export default {
   },
   props: {
     videosList: Array
+  },
+  methods: {
+    onVideoSelected(video) {
+      this.$emit('videoChosen', video);
+    }
   }
 };
 </script>
