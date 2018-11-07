@@ -1,12 +1,15 @@
 <template>
   <ul>
-    VideoList
+    {{ videosList.length }}
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'VideoList'
+  name: 'VideoList',
+  props: {
+    videosList: Array
+  }
 };
 </script>
 
